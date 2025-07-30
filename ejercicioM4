@@ -1,0 +1,81 @@
+class Persona:
+
+   def __init__(self, nombre, apellido, tamagochi): #atributos persona
+
+       self.nombre = nombre
+
+       self.apellido = apellido
+
+       self.tamagochi = tamagochi
+
+   def jugar_con_tamagochi(self): #metodos persona
+
+       print(f"{self.nombre} juega con tamagochi")#jugar_con_tamagotchi(): juega e invoca el método de tamagotchi jugar()
+       
+   def darle_comida(self):
+
+       print(f"{self.nombre} le da de comer a su tamagochi ")    
+       #darle_comida(): le da de comer su tamagotchi invocando al método de tamagotchi comer()
+   def curarlo(self):
+
+       print(f"{self.nombre} sana las heridas de su tamagochi")
+       #curarlo(): sana las heridas de su tamagotchi invocando al método de tamagotchi curar()
+
+class tamagochi():
+
+   def __init__(self, nombre, color, salud=100, felicidad=10, energia=100): #atributos tamagochi
+       
+       
+       self.nombre= nombre
+       self.color= color
+       self.salud= salud
+       self.felicidad= felicidad
+       self.energia= energia
+           
+
+   def jugar(self): # metodos tamagochi
+
+       print(f"{self.jugar} estoy divirtiendome") #jugar(): incrementa la felicidad el 10, disminuye la salud en 5
+
+   def comer(self):
+       print(f"{self.comer} esta rica la comida") #comer(): incrementa la felicidad en 5, aumenta la salud en 10
+       
+   def curar(self):
+       print(f"{self.curar} me sube la energia")  #curar(): incrementa la saludo en 20, disminuye la felicidad en 5
+       
+       
+
+# Crear una instancia de tamagochi
+mi_tamagochi = tamagochi("Tama", "rosa")
+
+# Crear una instancia de Persona, pasando el tamagochi como argumento
+persona1 = Persona("Fabian", "Gomez", mi_tamagochi)
+
+# Ejemplo de uso
+persona1.jugar_con_tamagochi()
+persona1.darle_comida()
+persona1.curarlo()
+
+# bonus sensei:
+class mimichi(tamagochi):
+
+   def __init__(self, nombre, color, caracteristica, salud=100, felicidad=10, energia=100):
+
+       super().__init__(nombre, color, salud, felicidad, energia)
+
+       self.caracteristica = caracteristica
+    
+   def mostrar_caracteristica(self):
+       print(f"{self.nombre} tiene la caracteristica especial: {self.caracteristica}")
+       
+       
+class pochichi(tamagochi):
+
+   def __init__(self, nombre, color, caracteristica, salud=100, felicidad=10, energia=100):
+
+       super().__init__(nombre, color, salud, felicidad, energia)
+
+       self.caracteristica = caracteristica
+       
+   def mostrar_caracteristica(self):
+       print(f"{self.nombre} tiene la caracteristica especial: {self.caracteristica}")
